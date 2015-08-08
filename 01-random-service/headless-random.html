@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Number</title>
+</head>
+<body>
+<h1>Random Number</h1>
+
+<div id="random-number"></div>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax('headless-random-service', {
+            success: function (data) {
+                console.log(data);
+                $('#random-number').html(data);
+            },
+            error: function (jqXHR) {
+                $('#random-number').html('Could not fetch data from back-end.');
+                alert(jqXHR.statusText);
+            }
+        })
+    });
+</script>
+</body>
+</html>

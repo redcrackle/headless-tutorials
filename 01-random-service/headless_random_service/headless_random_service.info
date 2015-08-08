@@ -1,0 +1,6 @@
+name = Headless Random Service
+description = Creates a service to return random number.
+package = Headless
+core = 7.x
+files[] = headless_random_service.module
+

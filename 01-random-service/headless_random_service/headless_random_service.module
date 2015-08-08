@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * @file
+ *
+ * Creates a service that returns a random number.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function headless_random_service_menu() {
+  $items = array();
+
+  $items['headless-random-service'] = array(
+    'title' => 'Headless Random Service',
+    'description' => 'Service to return a random number.',
+    'access callback' => TRUE,
+    'page callback' => 'headless_random_service_page',
+  );
+
+  return $items;
+}
+
+/**
+ * Page callback for returning a random number.
+ */
+function headless_random_service_page() {
+  echo rand();
+  exit;
+}
